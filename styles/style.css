@@ -80,12 +80,19 @@ main{
 /*------------ 
 Course Styles 
 -------------------*/
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 24px;
+}
 .course .course-banner img{
     width: 224px;
     height: 104px;
 }
 .course-info{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .fa-star.filled{
     color: #FFC014;
@@ -93,3 +100,40 @@ Course Styles
 .fa-star.empty{
     color: #AEAEAE;
 }
+.course-duration{
+    color: #FF4A60 ;
+    background-color: #FFE4E8;
+    border-radius: 14.6913px;
+    font-size: 14px;
+    font-weight: 600;
+}
+  /*------------------- 
+           Media Queries
+  ------------------------- */
+     /*-------------
+      Mobile Device
+      ---------------- */
+      @media only screen and (max-width:688px) {
+          .container{
+              width: 100%;
+          }
+          .players, .blogs, .courses{
+            
+              grid-template-columns: repeat(1, 1fr);
+          }
+          .player, .blog{
+              flex-direction: column;
+          }
+    
+      }
+      /* Tablet devices */
+      @media only screen and (min-width:688px) and (max-width:992px) {
+          .container{
+              width: 100%;
+          }
+          .players{
+            grid-template-columns: repeat(2, 1fr);
+          }
+          
+      }
+
